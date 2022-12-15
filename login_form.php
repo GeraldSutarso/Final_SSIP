@@ -24,6 +24,7 @@ if(isset($_POST['submit'])){
          header('location:user_page.php');
 
       }
+      $_SESSION['loggedin'] = true;
    }else{
       $error[] = 'incorrect email or password!';
    }
