@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 15, 2022 at 11:53 AM
+-- Generation Time: Dec 15, 2022 at 12:35 PM
 -- Server version: 10.4.24-MariaDB
 -- PHP Version: 8.1.6
 
@@ -40,7 +40,8 @@ CREATE TABLE `user_form` (
 --
 
 INSERT INTO `user_form` (`id`, `name`, `email`, `password`, `user_type`) VALUES
-(1, 'ARZIDAN ', 'arzidanakbar7@gmail.com', 'cc03e747a6afbbcbf8be7668acfebee5', 'user');
+(1, 'ARZIDAN ', 'arzidanakbar7@gmail.com', 'cc03e747a6afbbcbf8be7668acfebee5', 'user'),
+(2, 'Geraldadmin', 'testTwo@mail.co.id', 'e00cf25ad42683b3df678c61f42c6bda', 'admin');
 
 --
 -- Indexes for dumped tables
@@ -60,7 +61,7 @@ ALTER TABLE `user_form`
 -- AUTO_INCREMENT for table `user_form`
 --
 ALTER TABLE `user_form`
-  MODIFY `id` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
