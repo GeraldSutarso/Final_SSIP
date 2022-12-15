@@ -1,5 +1,8 @@
 <?php
 session_start();
+if($_SESSION["valid"] != true){
+  header("location: login_form.php");
+}
 ?>
 <html lang="en">
 <title>Car Rental</title>

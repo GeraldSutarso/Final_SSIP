@@ -14,7 +14,8 @@ if(isset($_POST['submit'])){
    $result = mysqli_query($conn, $select);
    if(mysqli_num_rows($result) > 0){
       $row = mysqli_fetch_array($result);
-      $_SESSION['loggedin'] = true;
+      $_SESSION["loggedin"] = true;
+      $_SESSION["valid"] = true;
       if($row['user_type'] == 'admin'){
          $_SESSION['userType'] = 1;
          $_SESSION['admin_name'] = $row['name'];
