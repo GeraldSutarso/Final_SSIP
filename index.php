@@ -1,5 +1,6 @@
 <?php
-session_start()
+session_start();
+include('navbar.php');
 ?>
 <<html>
     <title>Rental Mobil</title>
@@ -8,6 +9,6 @@ session_start()
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
     </head>
     <body>
-        
+
     </body>
 </html>
