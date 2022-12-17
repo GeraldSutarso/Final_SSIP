@@ -9,7 +9,7 @@
         <li><a href="admin_page.php"><i class="fa fa-dashboard"></i> Dashboard</a></li>
 				<li><a href="tambahmobil.php"><i class="fa-solid fa-car"></i></i></i> Add car</a></li>
 				<li><a href="tambahdriver.php"><i class="fa-solid fa-user"></i></i> Add Driver</a></li>
-				<li><a href="view.php"><i class="fa-solid fa-book"></i></i></i> View</a></li>
+				<li><a href="view.php"><i class="fa-solid fa-book"></i></i></i> View Book</a></li>
         <?php if(stripos($_SERVER['REQUEST_URI'], 'admin_page.php')){ ?>
         <li><a href="#car_table">Car Table</a></li>
         <li><a href="#driver_table">Driver Table</a></li>
