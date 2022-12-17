@@ -6,7 +6,7 @@
     </div>
  
     <ul class="nav navbar-nav navbar-right">
-    <li class="active"><a href="user_page.php">Home</a></li>
+    <li class="active"><?php if($_SESSION['userType'] == 1){echo "<a href='admin_page.php'>Admin Page";} elseif($_SESSION['userType'] == 2){echo "<a href='user_page.php'>User Page";}?></a></li>
     <?php if ($_SESSION["loggedin"] != true) {?>
     <li><a href='register_form.php'><span class='glyphicon glyphicon-user'></span> Register</a></li>
   <li><a href='login_form.php'><span class='glyphicon glyphicon-log-in'></span> Login</a></li>
