@@ -36,7 +36,7 @@
           <div class="form-group">
             <input type="text" class="form-control" id="driver_gender" name="driver_gender" placeholder="Gender" required>
           </div>
-
+          <a class="btn btn-warning pull-left" href="admin_page.php"> Back</a>
            <button type="submit" id="submit" name="submit" class="btn btn-primary pull-right"><a href="admin_page.php"> Add Driver</a></button>    
         </form>
       </div>

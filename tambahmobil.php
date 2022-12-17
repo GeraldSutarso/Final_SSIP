@@ -36,6 +36,7 @@
           <div class="form-group">
             <input name="uploadedimage" type="file">
           </div>
+          <a class="btn btn-warning pull-left" href="admin_page.php"> Back</a>
            <button type="submit" id="submit" name="submit" class="btn btn-success pull-right"><a href="admin_page.php"> Submit for Rental</a></button>    
         </form>
       </div>
