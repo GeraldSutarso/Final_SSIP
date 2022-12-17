@@ -41,5 +41,21 @@
         </form>
       </div>
     </div>
+    <?php
 
+	if(isset($_POST['submit'])) {
+		$car_name = $_POST['car_name'];
+		$car_nameplate = $_POST['car_nameplate'];
+    $price = $_POST['price'];
+		$year = $_POST['year'];
+		$driver_address = $_POST['uploadedimage'];
+		$driver_gender = $_POST['driver_gender'];
+
+		include("config.php");
+				
+
+		$data = mysqli_query($conn, "INSERT INTO driver(driver_name, dl_number, driver_phone, driver_address, driver_gender, driver_availability) VALUES('$driver_name', '$dl_number', '$driver_phone', '$driver_address', '$driver_gender', 1)");
+		header('location:admin_page.php');
+	}
+	?>
     

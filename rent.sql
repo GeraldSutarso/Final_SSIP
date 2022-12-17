@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 17, 2022 at 08:51 AM
+-- Generation Time: Dec 17, 2022 at 09:33 AM
 -- Server version: 10.4.24-MariaDB
 -- PHP Version: 8.1.6
 
@@ -34,7 +34,7 @@ CREATE TABLE `cars` (
   `car_img` varchar(50) DEFAULT 'NA',
   `price` int(11) DEFAULT NULL,
   `year` int(6) DEFAULT NULL,
-  `car_availability` varchar(10) NOT NULL
+  `car_availability` tinyint(1) DEFAULT 1
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
@@ -42,7 +42,7 @@ CREATE TABLE `cars` (
 --
 
 INSERT INTO `cars` (`car_id`, `car_name`, `car_nameplate`, `car_img`, `price`, `year`, `car_availability`) VALUES
-(1, 'Audi A4', 'GA3KA6969', 'assets/img/cars/audi-a4.jpg', 10000, 2012, 'yes');
+(1, 'Audi A4', 'GA3KA6969', 'assets/img/cars/audi-a4.jpg', 10000, 2012, 1);
 
 -- --------------------------------------------------------
 
@@ -56,15 +56,17 @@ CREATE TABLE `driver` (
   `dl_number` varchar(50) NOT NULL,
   `driver_phone` varchar(15) NOT NULL,
   `driver_address` varchar(50) NOT NULL,
-  `driver_gender` varchar(10) NOT NULL
+  `driver_gender` varchar(10) NOT NULL,
+  `driver_availability` tinyint(1) DEFAULT 1
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
 -- Dumping data for table `driver`
 --
 
-INSERT INTO `driver` (`driver_id`, `driver_name`, `dl_number`, `driver_phone`, `driver_address`, `driver_gender`) VALUES
-(2, 'Gerald', '1231231', '+61231231', 'Jl. ASDS no. 321', 'Male');
+INSERT INTO `driver` (`driver_id`, `driver_name`, `dl_number`, `driver_phone`, `driver_address`, `driver_gender`, `driver_availability`) VALUES
+(2, 'Gerald', '1231231', '+61231231', 'Jl. ASDS no. 321', 'Male', 1),
+(3, 'Dlareg', '1231232', '+61231213', 'Jl. ASDS no. 322', 'Female', 1);
 
 -- --------------------------------------------------------
 
@@ -126,7 +128,7 @@ ALTER TABLE `cars`
 -- AUTO_INCREMENT for table `driver`
 --
 ALTER TABLE `driver`
-  MODIFY `driver_id` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `driver_id` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT for table `user_form`
