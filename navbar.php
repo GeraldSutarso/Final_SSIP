@@ -22,6 +22,8 @@
   <li><a href='login_form.php'><span class='glyphicon glyphicon-log-in'></span> Login</a></li>
 <?php }else{?>
   <li><a href="#">Welcome, <?php if($_SESSION['userType'] == 1){echo $_SESSION['admin_name'];} elseif($_SESSION['userType'] == 2){echo $_SESSION['user_name'];}?> </a></li>
+  <li> <a href="prereturncar.php">Return Now </a></li>
+    <li> <a href="mybookings.php"> My Bookings </a></li>
 <li> <a href='logout.php'><span class='glyphicon glyphicon-log-out'></span> Logout</a></li>
 <?php } ?>
     </ul>
