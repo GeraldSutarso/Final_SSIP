@@ -54,7 +54,7 @@
 		include("config.php");
 				
 
-		$data = mysqli_query($conn, "INSERT INTO driver(driver_name, dl_number, driver_phone, driver_address, driver_gender) VALUES('$driver_name', '$dl_number', '$driver_phone', '$driver_address', '$driver_gender')");
+		$data = mysqli_query($conn, "INSERT INTO driver(driver_name, dl_number, driver_phone, driver_address, driver_gender, driver_availability) VALUES('$driver_name', '$dl_number', '$driver_phone', '$driver_address', '$driver_gender', 1)");
 		header('location:admin_page.php');
 	}
 	?>

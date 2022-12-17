@@ -34,7 +34,7 @@
           </div>
 
           <div class="form-group">
-            <input name="uploadedimage" type="file">
+            <input name="car_img" type="file">
           </div>
           <a class="btn btn-warning pull-left" href="admin_page.php"> Back</a>
            <button type="submit" id="submit" name="submit" class="btn btn-success pull-right"> Submit </button>    
@@ -42,20 +42,26 @@
       </div>
     </div>
     <?php
-
 	if(isset($_POST['submit'])) {
+    $fileName = $_FILES["car_img"]["name"];
+    $tempName = $_FILES["car_img"]["tmp_name"];
+    $folder = "assets/img/cars/". $fileName;
 		$car_name = $_POST['car_name'];
 		$car_nameplate = $_POST['car_nameplate'];
     $price = $_POST['price'];
 		$year = $_POST['year'];
-		$driver_address = $_POST['uploadedimage'];
-		$driver_gender = $_POST['driver_gender'];
+
 
 		include("config.php");
-				
+	
 
-		$data = mysqli_query($conn, "INSERT INTO driver(driver_name, dl_number, driver_phone, driver_address, driver_gender, driver_availability) VALUES('$driver_name', '$dl_number', '$driver_phone', '$driver_address', '$driver_gender', 1)");
+		$data = mysqli_query($conn, "INSERT INTO cars(car_name, car_nameplate, car_img, price, year, car_availability) VALUES('$car_name', '$car_nameplate', '$fileName', '$price', '$year', 1)");
+    if (move_uploaded_file($tempName, $folder)) {
+      echo "<h3>  Image uploaded successfully!</h3>";
+  } else {
+      echo "<h3>  Failed to upload image!</h3>";
+  }
 		header('location:admin_page.php');
-	}
+}
 	?>
     
