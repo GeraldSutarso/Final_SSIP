@@ -42,7 +42,7 @@ if(!isset($_SESSION['user_name'])){
 
             <img class="card-img-top" src="<?php echo $car_img; ?>" alt="Card image cap">
             <h5><b> <?php echo $car_name; ?> </b></h5>
-            <h6> Price: <?php echo ("Rp. " . $price . "/km "); ?></h6>
+            <h6> Price: <?php echo ("Rp. " . $price . "/day "); ?></h6>
             <h6> Year: <?php echo ($year); ?></h6>
 
             
