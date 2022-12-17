@@ -6,10 +6,10 @@
       <a class="navbar-brand" href="#">Car Rental | Admin Panel</a>
     </div>
     <ul class="nav navbar-nav">
-        <li><a href="admin_page.php"> Dashboard</a></li>
-				<li><a href="tambahmobil.php"> Add car</a></li>
-				<li><a href="tambahdriver.php"> Add Driver</a></li>
-				<li><a href="view.php"> View</a></li>
+        <li><a href="admin_page.php"><i class="fa fa-dashboard"></i> Dashboard</a></li>
+				<li><a href="tambahmobil.php"><i class="fa-solid fa-car"></i></i></i> Add car</a></li>
+				<li><a href="tambahdriver.php"><i class="fa-solid fa-user"></i></i> Add Driver</a></li>
+				<li><a href="view.php"><i class="fa-solid fa-book"></i></i></i> View</a></li>
     </ul>
     <?php } else{?>
     <a class="navbar-brand" href="#">Car Rental</a>

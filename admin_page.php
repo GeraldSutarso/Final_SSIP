@@ -28,17 +28,16 @@ if(!isset($_SESSION['admin_name'])){
 </head>
 <body>
 <?php 
-include('navbar.php');
-include('header.php');?>
+include('navbar.php');?>
    
-<div class="ts-main-content">
-<?php include('leftbar.php');?>
+<!-- <div class="ts-main-content">
+<?php //include('leftbar.php');?>
 <div class="content-wrapper">
 			<div class="container-fluid">
 
 			</div>                          
 </div>
-
+</div> -->
 
 </body>
 </html>
