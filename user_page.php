@@ -8,31 +8,17 @@ if(!isset($_SESSION['user_name'])){
 
 <!DOCTYPE html>
 <html lang="en">
+<title>Car Rental</title>
 <head>
-   <meta charset="UTF-8">
-   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-   <title>User Page</title>
-
-   <!-- custom css file link  -->
-   <link rel="stylesheet" href="css/style.css">
-
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 </head>
-<body>
-   
-<div class="container">
-
-   <div class="content">
-      <h3>Hi, <span>User</span></h3>
-      <h1>Welcome <span><?php echo $_SESSION['user_name'] ?></span></h1>
-      <p>This is an user page</p>
-      <a href="index.php">Home</a>
-      <a href="login_form.php" class="btn">Login</a>
-      <a href="register_form.php" class="btn">Register</a>
-      <a href="logout.php" class="btn">Logout</a>
-   </div>
-
-</div>
-
-</body>
+    <body>
+    <?php 
+    include('navbar.php'); ?>
+    <h2></h2>
+    </body>
 </html>
