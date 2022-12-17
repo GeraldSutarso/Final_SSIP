@@ -16,7 +16,7 @@ if(!isset($_SESSION['admin_name'])){
 	<meta name="author" content="">
 	<meta name="theme-color" content="#3e454c">
    <title>Rental Mobil | Admin Dashboard</title>
-
+   <script src="https://kit.fontawesome.com/dab3ca4542.js" crossorigin="anonymous"></script>
    <!-- Font awesome -->
 	<link rel="stylesheet" href="css/font-awesome.min.css">
 	<!-- Sandstone Bootstrap CSS -->
