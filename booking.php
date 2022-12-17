@@ -25,7 +25,7 @@ if(!isset($_SESSION['user_name'])){
 <div class="container" style="margin-top: 65px;" >
     <div class="col-md-7" style="float: none; margin: 0 auto;">
       <div class="form-area">
-        <form role="form" action="bookingconfirm.php" method="POST">
+        <form role="form" action="booking1.php" method="POST">
         <br style="clear: both">
           <br>
 
