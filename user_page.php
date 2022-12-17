@@ -20,5 +20,6 @@ if(!isset($_SESSION['user_name'])){
     <?php 
     include('navbar.php'); ?>
     <h2></h2>
+    <?php include('footer.php');?>
     </body>
 </html>
