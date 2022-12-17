@@ -72,7 +72,7 @@ if(!isset($_SESSION['admin_name'])){
 	if(isset($_POST['submit'])) {
     $fileName = $_FILES["car_img"]["name"];
     $tempName = $_FILES["car_img"]["tmp_name"];
-    $folder =  $fileName;
+    $folder =  "assets/img/cars/". $fileName;
 		$car_name = $_POST['car_name'];
 		$car_nameplate = $_POST['car_nameplate'];
     $price = $_POST['price'];
