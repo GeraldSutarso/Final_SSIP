@@ -1,5 +1,5 @@
 
-<nav class="navbar-top navbar-light" style="background-color: #e3f2fd;">
+<nav class=" sticky-top navbar fixed-top navbar-light" style="background-color: #e3f2fd;">
   <div class="container-fluid">
     <div class="navbar-header">
     <?php if($_SESSION['userType'] == 1){?>

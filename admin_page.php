@@ -24,11 +24,68 @@ if(!isset($_SESSION['admin_name'])){
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  <link rel="shortcut icon" type="image/png" href="assets/img/P.png">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
+    <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/fonts/font-awesome.min.css">
+    <link rel="stylesheet" href="assets/css/user.css">
+    <link rel="stylesheet" href="assets/w3css/w3.css">
+    <link href="http://fonts.googleapis.com/css?family=Open+Sans:300,400,700,400italic,700italic" rel="stylesheet" type="text/css">
+    <link href="http://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
+  
 
 </head>
 <body>
 <?php 
-include('navbar.php');?>
+include('navbar.php');
+if (isset($_GET['delete_car'])) {
+	$car_id = $_GET['delete_car'];
+	mysqli_query($conn, "DELETE FROM cars WHERE car_id=$car_id");
+	header('location: admin_page.php');}
+if (isset($_GET['delete_driver'])) {
+	$driver_id = $_GET['delete_driver'];
+	mysqli_query($conn, "DELETE FROM driver WHERE driver_id=$driver_id");
+	header('location: admin_page.php');}?>
+<br>
+<br>
+<center>
+<h3> Car Table </h3>
+<?php $results = mysqli_query($conn, "SELECT * FROM cars");
+?>
+<table class ="table">
+	<thead class="thead-dark">
+	<tr>
+		<th>Car ID</th>
+		<th>Car Name</th>
+		<th>Car Nameplate</th>
+		<th>Car Image</th>
+		<th>Price</th>
+		<th>Year</th>
+		<th>Availability</th>
+		<th>Edit and Delete</th>
+	</tr>
+	</thead>
+	<tbody class="tbody-light">
+	<?php while ($display = mysqli_fetch_array($results)) {?>
+	<tr>
+		<td><?php echo $display['car_id']; ?></td>
+		<td><?php echo $display['car_name']; ?></td>
+		<td><?php echo $display['car_nameplate']; ?></td>
+		<td><?php echo "<img style='width: 250px; height:137px;' src = 'assets/img/cars/".$display['car_img'] . "'>"; ?></td>
+		<td><?php echo $display['price']; ?></td>
+		<td><?php echo $display['year']; ?></td>
+		<td><?php echo $display['car_availability']; ?></td>
+		<td>
+			<!-- <a href="admin_page.php?edit=<?php //echo $display['id']; ?>">Edit</a> |  -->
+			<a class="btn btn-danger" onclick="return confirm('Are you sure you want to delete this row?');" href="admin_page.php?delete_car=<?php echo $display['car_id']; ?>">Delete</a>
+		</td>
+	</tr>
+	</tbody>
+	<?php }?>
+</table>
    
 <!-- <div class="ts-main-content">
 <?php //include('leftbar.php');?>
@@ -38,6 +95,6 @@ include('navbar.php');?>
 			</div>                          
 </div>
 </div> -->
-
+</center>
 </body>
 </html>
