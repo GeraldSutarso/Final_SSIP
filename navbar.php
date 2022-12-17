@@ -14,6 +14,10 @@
     <?php } else{?>
     <a class="navbar-brand" href="#">Car Rental</a>
     </div>
+    <ul class="nav navbar-nav">
+      <li><a href="prereturncar.php">Return Now </a></li>
+      <li><a href="mybookings.php"> My Bookings </a></li>
+    </ul>
     <?php }?>
     <ul class="nav navbar-nav navbar-right">
     <li class="active"><?php if($_SESSION['userType'] == 1){echo "<a href='admin_page.php'>Main";} elseif($_SESSION['userType'] == 2){echo "<a href='user_page.php'>Home";}?></a></li>
@@ -22,8 +26,6 @@
   <li><a href='login_form.php'><span class='glyphicon glyphicon-log-in'></span> Login</a></li>
 <?php }else{?>
   <li><a href="#">Welcome, <?php if($_SESSION['userType'] == 1){echo $_SESSION['admin_name'];} elseif($_SESSION['userType'] == 2){echo $_SESSION['user_name'];}?> </a></li>
-  <li> <a href="prereturncar.php">Return Now </a></li>
-    <li> <a href="mybookings.php"> My Bookings </a></li>
 <li> <a href='logout.php'><span class='glyphicon glyphicon-log-out'></span> Logout</a></li>
 <?php } ?>
     </ul>
