@@ -38,7 +38,7 @@ if(!isset($_SESSION['admin_name'])){
   
 
 </head>
-<body>
+<body><br><br><br>
 <?php 
 include('navbar.php');
 if (isset($_GET['delete_car'])) {
@@ -52,7 +52,8 @@ if (isset($_GET['delete_driver'])) {
 <br>
 <br>
 <center>
-<h3> Car Table </h3>
+<h3 id="car_table"> Car Table </h3>
+<div style="border:solid 1px;">
 <?php $results = mysqli_query($conn, "SELECT * FROM cars");
 ?>
 <table class ="table">
@@ -86,6 +87,44 @@ if (isset($_GET['delete_driver'])) {
 	</tbody>
 	<?php }?>
 </table>
+</div>
+<br><br>
+<br><h3 id="driver_table"> Driver Table</h3>
+<div style="border:solid 1px;">
+<?php $result = mysqli_query($conn, "SELECT * FROM driver");
+?>
+<table class ="table">
+	<thead class="thead-dark">
+	<tr>
+		<th>Driver ID</th>
+		<th>Name</th>
+		<th>License Number</th>
+		<th>Phone Number</th>
+		<th>Address</th>
+		<th>Gender</th>
+		<th>Availability</th>
+		<th>Edit and Delete</th>
+	</tr>
+	</thead>
+	<tbody class="tbody-light">
+	<?php while ($display = mysqli_fetch_array($result)) {?>
+	<tr>
+		<td><?php echo $display['driver_id']; ?></td>
+		<td><?php echo $display['driver_name']; ?></td>
+		<td><?php echo $display['dl_number']; ?></td>
+		<td><?php echo $display['driver_phone']; ?></td>
+		<td><?php echo $display['driver_address']; ?></td>
+		<td><?php echo $display['driver_gender']; ?></td>
+		<td><?php echo $display['driver_availability']; ?></td>
+		<td>
+			<!-- <a href="admin_page.php?edit=<?php //echo $display['id']; ?>">Edit</a> |  -->
+			<a class="btn btn-danger" onclick="return confirm('Are you sure you want to delete this row?');" href="admin_page.php?delete_driver=<?php echo $display['driver_id']; ?>">Delete</a>
+		</td>
+	</tr>
+	</tbody>
+	<?php }?>
+</table>
+</div>
    
 <!-- <div class="ts-main-content">
 <?php //include('leftbar.php');?>

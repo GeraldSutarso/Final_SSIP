@@ -1,5 +1,5 @@
 
-<nav class=" sticky-top navbar fixed-top navbar-light" style="background-color: #e3f2fd;">
+<nav class="navbar sticky-top navbar-fixed-top navbar-light" style="background-color: #e3f2fd;">
   <div class="container-fluid">
     <div class="navbar-header">
     <?php if($_SESSION['userType'] == 1){?>
@@ -10,6 +10,10 @@
 				<li><a href="tambahmobil.php"><i class="fa-solid fa-car"></i></i></i> Add car</a></li>
 				<li><a href="tambahdriver.php"><i class="fa-solid fa-user"></i></i> Add Driver</a></li>
 				<li><a href="view.php"><i class="fa-solid fa-book"></i></i></i> View</a></li>
+        <?php if(stripos($_SERVER['REQUEST_URI'], 'admin_page.php')){ ?>
+        <li><a href="#car_table">Car Table</a></li>
+        <li><a href="#driver_table">Driver Table</a></li>
+        <?php }?>
     </ul>
     <?php } else{?>
     <a class="navbar-brand" href="#">Car Rental</a>
