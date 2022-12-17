@@ -45,7 +45,7 @@
 	if(isset($_POST['submit'])) {
     $fileName = $_FILES["car_img"]["name"];
     $tempName = $_FILES["car_img"]["tmp_name"];
-    $folder = "assets/img/cars/". $fileName;
+    $folder =  $fileName;
 		$car_name = $_POST['car_name'];
 		$car_nameplate = $_POST['car_nameplate'];
     $price = $_POST['price'];
