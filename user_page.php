@@ -24,7 +24,7 @@ if(!isset($_SESSION['user_name'])){
 <br>
         <section class="menu-content">
             <?php   
-            $sql1 = "SELECT * FROM cars WHERE car_availability='yes'";
+            $sql1 = "SELECT * FROM cars WHERE car_availability='1'";
             $result1 = mysqli_query($conn,$sql1);
 
             if(mysqli_num_rows($result1) > 0) {
