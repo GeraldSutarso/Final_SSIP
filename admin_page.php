@@ -80,7 +80,7 @@ if (isset($_GET['delete_driver'])) {
 		<td><?php echo $display['year']; ?></td>
 		<td><?php echo $display['car_availability']; ?></td>
 		<td>
-			<!-- <a href="admin_page.php?edit=<?php //echo $display['id']; ?>">Edit</a> |  -->
+			<a class="btn btn-info" href="editcar.php?car_id=<?php echo $display['car_id']; ?>">Edit</a>  
 			<a class="btn btn-danger" onclick="return confirm('Are you sure you want to delete this row?');" href="admin_page.php?delete_car=<?php echo $display['car_id']; ?>">Delete</a>
 		</td>
 	</tr>
@@ -117,7 +117,7 @@ if (isset($_GET['delete_driver'])) {
 		<td><?php echo $display['driver_gender']; ?></td>
 		<td><?php echo $display['driver_availability']; ?></td>
 		<td>
-			<!-- <a href="admin_page.php?edit=<?php //echo $display['id']; ?>">Edit</a> |  -->
+			<a class="btn btn-info" href="editdriver.php?driver_id=<?php echo $display['driver_id']; ?>">Edit</a>   
 			<a class="btn btn-danger" onclick="return confirm('Are you sure you want to delete this row?');" href="admin_page.php?delete_driver=<?php echo $display['driver_id']; ?>">Delete</a>
 		</td>
 	</tr>

@@ -1,10 +1,9 @@
 <?php
 @include 'config.php';
 session_start();
-if(!isset($_SESSION['user_name'])){
+if(!isset($_SESSION['admin_name'])){
    header('location:login_form.php');
 }
-?>
 ?>
 <head>
 <link rel="shortcut icon" type="image/png" href="assets/img/P.png.png">
@@ -42,7 +41,7 @@ if(!isset($_SESSION['user_name'])){
       <div class="form-area">
         <form role="form" action="tambahmobil.php" enctype="multipart/form-data" method="POST">
         <br style="clear: both">
-          <h3 style="margin-bottom: 25px; text-align: center; font-size: 30px;"> Please Provide Your Car Details. </h3>
+          <h3 style="margin-bottom: 25px; text-align: center; font-size: 30px;"> Enter Car Details </h3>
 
           <div class="form-group">
             <input type="text" class="form-control" id="car_name" name="car_name" placeholder="Car Name " required autofocus="">
