@@ -1,4 +1,10 @@
-<?php session_start();?>
+<?php
+@include 'config.php';
+session_start();
+if(!isset($_SESSION['user_name'])){
+   header('location:login_form.php');
+}
+?>
 <head>
 <link rel="shortcut icon" type="image/png" href="assets/img/P.png.png">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
@@ -72,7 +78,6 @@
 		$driver_address = $_POST['driver_address'];
 		$driver_gender = $_POST['driver_gender'];
 
-		include("config.php");
 				
 
 		$data = mysqli_query($conn, "INSERT INTO driver(driver_name, dl_number, driver_phone, driver_address, driver_gender, driver_availability) VALUES('$driver_name', '$dl_number', '$driver_phone', '$driver_address', '$driver_gender', 1)");

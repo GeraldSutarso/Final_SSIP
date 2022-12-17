@@ -1,4 +1,10 @@
-<?php session_start();
+<?php
+@include 'config.php';
+session_start();
+if(!isset($_SESSION['user_name'])){
+   header('location:login_form.php');
+}
+?>
 ?>
 <head>
 <link rel="shortcut icon" type="image/png" href="assets/img/P.png.png">
@@ -71,10 +77,6 @@
 		$car_nameplate = $_POST['car_nameplate'];
     $price = $_POST['price'];
 		$year = $_POST['year'];
-
-
-		include("config.php");
-	
 
 		$data = mysqli_query($conn, "INSERT INTO cars(car_name, car_nameplate, car_img, price, year, car_availability) VALUES('$car_name', '$car_nameplate', '$fileName', '$price', '$year', 1)");
     if (move_uploaded_file($tempName, $folder)) {
