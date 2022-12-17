@@ -13,7 +13,7 @@
 <div class="container" style="margin-top: 65px;" >
     <div class="col-md-7" style="float: none; margin: 0 auto;">
       <div class="form-area">
-        <form role="form" action="entercar1.php" enctype="multipart/form-data" method="POST">
+        <form role="form" action="tambahmobil.php" enctype="multipart/form-data" method="POST">
         <br style="clear: both">
           <h3 style="margin-bottom: 25px; text-align: center; font-size: 30px;"> Please Provide Your Car Details. </h3>
 
@@ -37,7 +37,7 @@
             <input name="uploadedimage" type="file">
           </div>
           <a class="btn btn-warning pull-left" href="admin_page.php"> Back</a>
-           <button type="submit" id="submit" name="submit" class="btn btn-success pull-right"><a href="admin_page.php"> Submit for Rental</a></button>    
+           <button type="submit" id="submit" name="submit" class="btn btn-success pull-right"> Submit </button>    
         </form>
       </div>
     </div>

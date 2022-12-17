@@ -3,6 +3,13 @@ session_start();
 if($_SESSION["valid"] != true){
   header("location: login_form.php");
 }
+  if($_SESSION['userType'] == 1){
+    header("location: admin_page.php");
+  }
+  if($_SESSION['userType'] == 2){
+    header("location: user_page.php");
+  }
+
 ?>
 <html lang="en">
 <title>Car Rental</title>

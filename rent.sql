@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 17, 2022 at 06:35 AM
+-- Generation Time: Dec 17, 2022 at 08:51 AM
 -- Server version: 10.4.24-MariaDB
 -- PHP Version: 8.1.6
 
@@ -28,7 +28,7 @@ SET time_zone = "+00:00";
 --
 
 CREATE TABLE `cars` (
-  `car_id` int(20) NOT NULL,
+  `car_id` int(255) NOT NULL,
   `car_name` varchar(50) NOT NULL,
   `car_nameplate` varchar(50) NOT NULL,
   `car_img` varchar(50) DEFAULT 'NA',
@@ -51,14 +51,20 @@ INSERT INTO `cars` (`car_id`, `car_name`, `car_nameplate`, `car_img`, `price`, `
 --
 
 CREATE TABLE `driver` (
-  `driver_id` int(20) NOT NULL,
+  `driver_id` int(255) NOT NULL,
   `driver_name` varchar(50) NOT NULL,
   `dl_number` varchar(50) NOT NULL,
   `driver_phone` varchar(15) NOT NULL,
   `driver_address` varchar(50) NOT NULL,
-  `driver_gender` varchar(10) NOT NULL,
-  `driver_availability` varchar(10) NOT NULL
+  `driver_gender` varchar(10) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Dumping data for table `driver`
+--
+
+INSERT INTO `driver` (`driver_id`, `driver_name`, `dl_number`, `driver_phone`, `driver_address`, `driver_gender`) VALUES
+(2, 'Gerald', '1231231', '+61231231', 'Jl. ASDS no. 321', 'Male');
 
 -- --------------------------------------------------------
 
@@ -81,11 +87,24 @@ CREATE TABLE `user_form` (
 INSERT INTO `user_form` (`id`, `name`, `email`, `password`, `user_type`) VALUES
 (1, 'ARZIDAN ', 'arzidanakbar7@gmail.com', 'cc03e747a6afbbcbf8be7668acfebee5', 'user'),
 (2, 'Geraldadmin', 'testTwo@mail.co.id', 'e00cf25ad42683b3df678c61f42c6bda', 'admin'),
-(3, 'test', 'test@gmail.com', 'cc03e747a6afbbcbf8be7668acfebee5', 'admin');
+(3, 'test', 'test@gmail.com', 'cc03e747a6afbbcbf8be7668acfebee5', 'admin'),
+(4, 'Geralduser', 'geralduser@mail.com', '24c9e15e52afc47c225b757e7bee1f9d', 'user');
 
 --
 -- Indexes for dumped tables
 --
+
+--
+-- Indexes for table `cars`
+--
+ALTER TABLE `cars`
+  ADD PRIMARY KEY (`car_id`);
+
+--
+-- Indexes for table `driver`
+--
+ALTER TABLE `driver`
+  ADD PRIMARY KEY (`driver_id`);
 
 --
 -- Indexes for table `user_form`
@@ -98,10 +117,22 @@ ALTER TABLE `user_form`
 --
 
 --
+-- AUTO_INCREMENT for table `cars`
+--
+ALTER TABLE `cars`
+  MODIFY `car_id` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+
+--
+-- AUTO_INCREMENT for table `driver`
+--
+ALTER TABLE `driver`
+  MODIFY `driver_id` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+
+--
 -- AUTO_INCREMENT for table `user_form`
 --
 ALTER TABLE `user_form`
-  MODIFY `id` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
