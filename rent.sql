@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 15, 2022 at 12:35 PM
+-- Generation Time: Dec 17, 2022 at 04:57 AM
 -- Server version: 10.4.24-MariaDB
 -- PHP Version: 8.1.6
 
@@ -18,8 +18,24 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `rentaluser`
+-- Database: `rent`
 --
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `cars`
+--
+
+CREATE TABLE `cars` (
+  `car_id` int(20) NOT NULL,
+  `car_name` varchar(50) NOT NULL,
+  `car_nameplate` varchar(50) NOT NULL,
+  `car_img` varchar(50) DEFAULT 'NA',
+  `price` int(11) DEFAULT NULL,
+  `year` int(6) DEFAULT NULL,
+  `car_availability` varchar(10) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
 
