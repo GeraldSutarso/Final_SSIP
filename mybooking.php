@@ -32,6 +32,8 @@ if(!isset($_SESSION['user_name'])){
 <div style="border:solid 1px;">
 <?php $results = mysqli_query($conn, "SELECT * FROM cars, booking, driver WHERE cars.car_id = booking.car_id AND booking.driver_id = driver.driver_id");
 ?>
+<br id="list_booking"><br><br><br>
+<h3>Your Booking List</h3>
 <table class ="table">
 	<thead class="thead-dark">
 	<tr>
@@ -59,5 +61,5 @@ if(!isset($_SESSION['user_name'])){
 	<?php }?>
 </table>
 </div>
-
+<?php include('footer.php');?>
 </body>
