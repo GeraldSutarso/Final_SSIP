@@ -46,7 +46,7 @@ if(!isset($_SESSION['user_name'])){
 					<h1>Contact Us</h1>
 				</div>
 				<div class="content">
-					<p>Email :</p>
+					<p>Email : Carrent@gmail.com</p>
 				</div>
 				<div class="social">
 					<a href=""><i class="fab fa-facebook-f"></i></a>
