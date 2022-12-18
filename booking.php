@@ -48,7 +48,7 @@ if(!isset($_SESSION['user_name'])){
 		$data = mysqli_query($conn, "INSERT INTO booking(car_id, user_id, startDate, endDate, no_days, price, total_price, driver_id, returned) VALUES('$car_id', '$user_id', '$startDate', '$endDate', '$no_days', '$price', '$total_price', '$driver_id', 'no')");
 		$data2 = mysqli_query($conn, "UPDATE driver SET driver_availability = '0' WHERE driver_id = '$driver_id'");
     $data3 = mysqli_query($conn, "UPDATE cars SET car_availability = '0' WHERE car_id = '$car_id'");
-    echo"<script> window.location.href='user_page.php';</script>";
+    echo"<script> window.location.href='mybooking.php';</script>";
 	}?>
         <?php
     $car_id = $_GET['car_id'];
@@ -149,7 +149,7 @@ if(!isset($_SESSION['user_name'])){
                 <input type="hidden" name="driver_id" value="<?php echo $driver_id; ?>"><br>
                 
            <a class="btn btn-info pull-left" href="user_page.php"> Back</a>
-           <input type="submit"name="submit" value="Rent Now" class="btn btn-warning pull-right">     
+           <input type="submit" onclick="return confirm('Are you sure you want to Book?');" name="submit" value="Rent Now" class="btn btn-warning pull-right">     
         </form>
         
       </div>
