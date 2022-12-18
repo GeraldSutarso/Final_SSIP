@@ -10,18 +10,16 @@ if(!isset($_SESSION['user_name'])){
 
 <title>Book Car </title>
 <head>
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
-  <link rel="shortcut icon" type="image/png" href="assets/img/P.png">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
+    <script type="text/javascript" src="assets/ajs/angular.min.js"> </script>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
+<link rel="shortcut icon" type="image/png" href="assets/img/P.png.png">
     <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
     <link rel="stylesheet" href="assets/fonts/font-awesome.min.css">
-    <link rel="stylesheet" href="assets/css/user.css">
     <link rel="stylesheet" href="assets/w3css/w3.css">
-    <link href="http://fonts.googleapis.com/css?family=Open+Sans:300,400,700,400italic,700italic" rel="stylesheet" type="text/css">
-    <link href="http://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
-<link rel="stylesheet" type="text/css" media="screen" href="assets/css/clientpage.css" />
+  <script type="text/javascript" src="assets/js/jquery.min.js"></script>
+  <script type="text/javascript" src="assets/js/bootstrap.min.js"></script>  
+  <script type="text/javascript" src="assets/js/custom.js"></script> 
+ <link rel="stylesheet" type="text/css" media="screen" href="assets/css/clientpage.css" />
 </head>
 <body ng-app="">    
 <div class="container" style="margin-top: 65px;" >
@@ -160,7 +158,6 @@ if(!isset($_SESSION['user_name'])){
             <h6><strong>Note:</strong> You will be charged with extra <span class="text-danger">Rp 50.000</span> for each day after the due date ends.</h6>
         </div>
     </div>
-</div>
-<?php include('footer.php'); ?>
 </body>
+<?php include ('footer.php')?>
 </html>

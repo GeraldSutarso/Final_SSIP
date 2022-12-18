@@ -45,6 +45,7 @@ if(!isset($_SESSION['user_name'])){
 		<th>Total Price</th>
 		<th>Driver</th>
     <th>Driver Phone Number</th>
+    <th>Returned</th>
 	</tr>
 	</thead>
   <tbody class="tbody-light">
@@ -58,6 +59,7 @@ if(!isset($_SESSION['user_name'])){
     <td><?php echo $display['total_price']; ?></td>
     <td><?php echo $display['driver_name']; ?></td>
     <td><?php echo $display['driver_phone'];?></td>
+    <td><?php echo $display['returned'];?></td>
 	</tr>
 	</tbody>
 	<?php }?>
