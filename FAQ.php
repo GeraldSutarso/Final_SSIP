@@ -37,3 +37,7 @@ if(!isset($_SESSION['user_name'])){
     <link href="http://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
   
 </head>
+<body>
+    <?php include('navbar.php');?>
+    <?php include('footer.php');?>
+</body>
