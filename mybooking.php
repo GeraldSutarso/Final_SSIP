@@ -44,6 +44,7 @@ if(!isset($_SESSION['user_name'])){
     <th>End Date</th>
 		<th>Price</th>
 		<th>Driver</th>
+    <th>Driver Phone Number</th>
 	</tr>
 	</thead>
   <tbody class="tbody-light">
@@ -56,6 +57,7 @@ if(!isset($_SESSION['user_name'])){
     <td><?php echo $display["endDate"]; ?></td>
     <td><?php echo $display['price']; ?></td>
     <td><?php echo $display['driver_name']; ?></td>
+    <td><?php echo $display['driver_phone'];?></td>
 	</tr>
 	</tbody>
 	<?php }?>
