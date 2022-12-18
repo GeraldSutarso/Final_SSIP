@@ -45,7 +45,7 @@ if(!isset($_SESSION['user_name'])){
     $total_price = $harga * $no_days;
 		$driver_id = $_POST['driver_id'];
 
-		$data = mysqli_query($conn, "INSERT INTO booking(car_id, user_id, startDate, endDate, no_days, price, total_price, driver_id) VALUES('$car_id', '$user_id', '$startDate', '$endDate', '$no_days', '$price', '$total_price', '$driver_id')");
+		$data = mysqli_query($conn, "INSERT INTO booking(car_id, user_id, startDate, endDate, no_days, price, total_price, driver_id, returned) VALUES('$car_id', '$user_id', '$startDate', '$endDate', '$no_days', '$price', '$total_price', '$driver_id', 'no')");
 		$data2 = mysqli_query($conn, "UPDATE driver SET driver_availability = '0' WHERE driver_id = '$driver_id'");
     $data3 = mysqli_query($conn, "UPDATE cars SET car_availability = '0' WHERE car_id = '$car_id'");
     echo"<script> window.location.href='user_page.php';</script>";

@@ -125,15 +125,6 @@ if (isset($_GET['delete_driver'])) {
 	<?php }?>
 </table>
 </div>
-   
-<!-- <div class="ts-main-content">
-<?php //include('leftbar.php');?>
-<div class="content-wrapper">
-			<div class="container-fluid">
-
-			</div>                          
-</div>
-</div> -->
 </center>
 </body>
 </html>

@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 18, 2022 at 10:50 AM
+-- Generation Time: Dec 18, 2022 at 10:56 AM
 -- Server version: 10.4.24-MariaDB
 -- PHP Version: 8.1.6
 
@@ -36,16 +36,17 @@ CREATE TABLE `booking` (
   `endDate` varchar(2555) NOT NULL,
   `price` int(100) NOT NULL,
   `no_days` int(50) DEFAULT NULL,
-  `total_price` int(255) NOT NULL
+  `total_price` int(255) NOT NULL,
+  `returned` varchar(3) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
 -- Dumping data for table `booking`
 --
 
-INSERT INTO `booking` (`book_id`, `user_id`, `car_id`, `driver_id`, `startDate`, `endDate`, `price`, `no_days`, `total_price`) VALUES
-(6, 4, 4, 4, '2022-12-19', '2022-12-22', 0, 3, 0),
-(7, 4, 10, 3, '2022-12-18', '2022-12-24', 500000, 6, 3000000);
+INSERT INTO `booking` (`book_id`, `user_id`, `car_id`, `driver_id`, `startDate`, `endDate`, `price`, `no_days`, `total_price`, `returned`) VALUES
+(6, 4, 4, 4, '2022-12-19', '2022-12-22', 0, 3, 0, 'no'),
+(7, 4, 10, 3, '2022-12-18', '2022-12-24', 500000, 6, 3000000, 'no');
 
 -- --------------------------------------------------------
 
