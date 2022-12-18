@@ -150,7 +150,7 @@ if(!isset($_SESSION['user_name'])){
                 <input type="hidden" name="driver_id" value="<?php echo $driver_id; ?>"><br>
                 
            <a class="btn btn-info pull-left" href="user_page.php"> Back</a>
-           <input type="submit" onclick="return confirm('Are you sure you want to Book?');" name="submit" value="Rent Now" class="btn btn-warning pull-right">     
+           <input type="submit" onclick="return confirm('Are you sure you want to Book? To cancel later you have to contact admin.');" name="submit" value="Rent Now" class="btn btn-warning pull-right">     
         </form>
         
       </div>
