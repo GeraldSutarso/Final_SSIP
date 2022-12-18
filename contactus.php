@@ -39,4 +39,22 @@ if(!isset($_SESSION['user_name'])){
 </head>
 <body>
     <?php include('navbar.php');?>
+    <div class="section">
+		<div class="container">
+			<div class="content-section">
+				<div class="title">
+					<h1>Contact Us</h1>
+				</div>
+				<div class="content">
+					<p>Email :</p>
+				</div>
+				<div class="social">
+					<a href=""><i class="fab fa-facebook-f"></i></a>
+					<a href=""><i class="fab fa-twitter"></i></a>
+					<a href=""><i class="fab fa-instagram"></i></a>
+				</div>
+			</div>
+			
+		</div>
+	</div>
 </body>
