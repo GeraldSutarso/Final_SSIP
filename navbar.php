@@ -13,6 +13,8 @@
         <?php if(stripos($_SERVER['REQUEST_URI'], 'admin_page.php')){ ?>
         <li><a href="#car_table">Car Table</a></li>
         <li><a href="#driver_table">Driver Table</a></li>
+        <?php } else?> <?php if(stripos($_SERVER['REQUEST_URI'], 'viewbook.php')){ ?>
+          <li><a href="#view">View Booking Table</a></li>
         <?php }?>
     </ul>
     <?php } else{?>
