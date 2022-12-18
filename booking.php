@@ -74,8 +74,7 @@ if(!isset($_SESSION['user_name'])){
           $user_id = $display4['id'];
         }
         ?>
-            
-
+          
           <!-- <div class="form-group"> -->
               <h5> Selected Car:&nbsp;  <b><?php echo($car_name);?></b></h5>
          <!-- </div> -->
