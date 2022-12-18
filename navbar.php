@@ -20,7 +20,7 @@
     </div>
     <ul class="nav navbar-nav">
       <li><a href="returncar.php">Return Now </a></li>
-      <li><a href="mybookings.php"> My Bookings </a></li>
+      <li><a href="mybooking.php"> My Bookings </a></li>
     </ul>
     <?php }?>
     <ul class="nav navbar-nav navbar-right">
