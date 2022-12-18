@@ -39,5 +39,21 @@ if(!isset($_SESSION['user_name'])){
 </head>
 <body>
     <?php include('navbar.php');?>
+    <div id="sec2" style="color: #777;background-color:white;text-align:center;padding:50px 80px;text-align: justify;">
+        <h3 style="text-align:center;">Frequently Asked Questions</h3>
+<br>
+        <section class="menu-content">
+            <div class="container">
+                <div class="row">
+                    <h4>Is this save?</h4><br>
+                    <h5> Yes</h5>
+                </div>
+            </div>                                
+        </section>
+                    
+    </div>
+
+
+    <h2></h2>
     <?php include('footer.php');?>
 </body>
