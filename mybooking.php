@@ -27,49 +27,37 @@ if(!isset($_SESSION['user_name'])){
     <?php 
     include('navbar.php'); 
     ?>
-
-<center>
+    <center>
 <h3 > Car Table </h3>
 <div style="border:solid 1px;">
-<?php $results = mysqli_query($conn, "SELECT * FROM rentedcars rc, cars c WHERE  c.car_id=rc.car_id AND rc.return_status='R'");
+<?php $results = mysqli_query($conn, "SELECT * FROM cars, booking, driver WHERE cars.car_id = booking.car_id AND booking.driver_id = driver.driver_id");
 ?>
 <table class ="table">
 	<thead class="thead-dark">
 	<tr>
-    <th width="15%">Car</th>
-    <th width="15%">Start Date</th>
-    <th width="15%">End Date</th>
-    <th width="10%">Fare</th>
-    <th width="15%">Number of Days</th>
-    <th width="15%">Total Amount</th>
+    <th>Car Id</th>
+		<th>Car Name</th>
+		<th>Car Nameplate</th>
+		<th>Start Date</th>
+    <th>End Date</th>
+		<th>Price</th>
+		<th>Driver</th>
 	</tr>
 	</thead>
-	<tbody class="tbody-light">
+  <tbody class="tbody-light">
 	<?php while ($display = mysqli_fetch_array($results)) {?>
 	<tr>
-    <td><?php echo $row["car_name"]; ?></td>
-<td><?php echo $row["rent_start_date"] ?></td>
-<td><?php echo $row["rent_end_date"]; ?></td>
-<td>Rp.  <?php 
-            if($row["charge_type"] == "days"){
-                    echo ($row["fare"] . "/day");
-                } 
-            ?></td>
-<td><?php  if($row["charge_type"] == "days"){
-                    echo ("-");
-                }?></td>
-<td><?php echo $row["no_of_days"]; ?> </td>
-<td>Rp.  <?php echo $row["total_amount"]; ?></td>
-</tr>
-<?php        } ?>
-                </table>
-                </div> 
-        
-        <div class="container">
-      <div class="jumbotron">
-        <h1 class="text-center">You have not rented any cars till now!</h1>
-        <p class="text-center"> Please rent cars in order to view your data here. </p>
-      </div>
-    </div>
+		<td><?php echo $display['car_id']; ?></td>
+		<td><?php echo $display['car_name']; ?></td>
+		<td><?php echo $display['car_nameplate']; ?></td>
+    <td><?php echo $display["startDate"] ?></td>
+    <td><?php echo $display["endDate"]; ?></td>
+    <td><?php echo $display['price']; ?></td>
+    <td><?php echo $display['driver_name']; ?></td>
+	</tr>
+	</tbody>
+	<?php }?>
+</table>
+</div>
 
 </body>
