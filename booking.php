@@ -128,7 +128,7 @@ if(!isset($_SESSION['user_name'])){
                 </div>
                 <?php }} ?>
                 </div>
-                <input type="hidden" name="hidden_carid" value="<?php echo $car_id; ?>"><br>
+                <input type="hidden" name="car_id" value="<?php echo $car_id; ?>"><br>
                 
            <a class="btn btn-info pull-left" href="user_page.php"> Back</a>
            <input type="submit"name="submit" value="Rent Now" class="btn btn-warning pull-right">     
