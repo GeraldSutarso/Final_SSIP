@@ -46,6 +46,7 @@ if(!isset($_SESSION['user_name'])){
 		<th>Driver</th>
     <th>Driver Phone Number</th>
     <th>Returned</th>
+    <th>Confirm Return to admin</th>
 	</tr>
 	</thead>
   <tbody class="tbody-light">
@@ -60,6 +61,7 @@ if(!isset($_SESSION['user_name'])){
     <td><?php echo $display['driver_name']; ?></td>
     <td><?php echo $display['driver_phone'];?></td>
     <td><?php echo $display['returned'];?></td>
+    <td><a class="btn button-error" href="contactus.php">Contact Admin</a></td>
 	</tr>
 	</tbody>
 	<?php }?>
