@@ -46,7 +46,11 @@ if(!isset($_SESSION['user_name'])){
 					<h1>Contact Us</h1>
 				</div>
 				<div class="content">
-					<p>Email : Carrent@gmail.com</p>
+                    <table>
+					<td>Email : CarRent@mail.com</td>
+                    <td>Phone : +62123456789</td>
+                    <td>Admin : CarRentAdmin@mail.com</td>
+                    </table>
 				</div>
 				<div class="social">
 					<a href=""><i class="fab fa-facebook-f"></i></a>
