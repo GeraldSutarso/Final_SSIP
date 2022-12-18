@@ -42,7 +42,7 @@ if(!isset($_SESSION['user_name'])){
 		<th>Car Nameplate</th>
 		<th>Start Date</th>
     <th>End Date</th>
-		<th>Price</th>
+		<th>Total Price</th>
 		<th>Driver</th>
     <th>Driver Phone Number</th>
 	</tr>
@@ -55,7 +55,7 @@ if(!isset($_SESSION['user_name'])){
 		<td><?php echo $display['car_nameplate']; ?></td>
     <td><?php echo $display["startDate"] ?></td>
     <td><?php echo $display["endDate"]; ?></td>
-    <td><?php echo $display['price']; ?></td>
+    <td><?php echo $display['total_price']; ?></td>
     <td><?php echo $display['driver_name']; ?></td>
     <td><?php echo $display['driver_phone'];?></td>
 	</tr>
