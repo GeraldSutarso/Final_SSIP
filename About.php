@@ -39,4 +39,23 @@ if(!isset($_SESSION['user_name'])){
 </head>
 <body>
     <?php include('navbar.php');?>
+    <div class="section">
+		<div class="container">
+			<div class="content-section">
+				<div class="title">
+					<h1>About Us</h1>
+				</div>
+				<div class="content">
+					<h3>Car Rent</h3>
+					<p>are businesses that rent out automobiles for brief periods, typically ranging from a few hours to a few weeks. Most frequently situated close to airports or popular sections of a city, they frequently have websites that allow online ordering, and they are frequently set up with various local branches (which allow consumers to return vehicles to a separate location).</p>
+				</div>
+				<div class="social">
+					<a href=""><i class="fab fa-facebook-f"></i></a>
+					<a href=""><i class="fab fa-twitter"></i></a>
+					<a href=""><i class="fab fa-instagram"></i></a>
+				</div>
+			</div>
+			
+		</div>
+	</div>
 </body>
