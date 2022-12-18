@@ -43,10 +43,24 @@ if(!isset($_SESSION['admin_name'])){
 include('navbar.php');
 if (isset($_GET['returnyes'])) {
 	$book_id = $_GET['returnyes'];
+   $result = mysqli_query($conn, "SELECT * FROM booking INNER JOIN cars on booking.car_id = cars.car_id INNER JOIN driver ON booking.driver_id = driver.driver_id INNER JOIN user_form on booking.user_id = user_form.id");
+   while ($display = mysqli_fetch_array($result)) {
+      $driver_id = $display['driver_id'];
+      $car_id = $display['car_id'];
+      mysqli_query($conn, "UPDATE driver SET driver_availability = '1' WHERE driver_id = '$driver_id'");
+      mysqli_query($conn, "UPDATE cars SET car_availability = '1' WHERE car_id = '$car_id'");
+   }
 	mysqli_query($conn, "UPDATE booking SET returned='yes' WHERE book_id = '$book_id'");
 	header('location: viewbook.php');}
 if (isset($_GET['returnno'])) {
 	$book_id = $_GET['returnno'];
+   $result = mysqli_query($conn, "SELECT * FROM booking INNER JOIN cars on booking.car_id = cars.car_id INNER JOIN driver ON booking.driver_id = driver.driver_id INNER JOIN user_form on booking.user_id = user_form.id");
+   while ($display = mysqli_fetch_array($result)) {
+      $driver_id = $display['driver_id'];
+      $car_id = $display['car_id'];
+      mysqli_query($conn, "UPDATE driver SET driver_availability = '0' WHERE driver_id = '$driver_id'");
+      mysqli_query($conn, "UPDATE cars SET car_availability = '0' WHERE car_id = '$car_id'");
+   }
 	mysqli_query($conn, "UPDATE booking SET returned='no' WHERE book_id = '$book_id'");
 	header('location: viewbook.php');}
 if (isset($_GET['delete'])) {
