@@ -19,8 +19,13 @@
     </ul>
     <?php } else{?>
     <a class="navbar-brand" href="user_page.php">Car Rental</a>
-    </div>
+  </div>
+  <ul class="nav navbar-nav">
+  <?php if(stripos($_SERVER['REQUEST_URI'], 'mybooking.php')){ ?>
+          <li><a href="#list_booking">Top List</a></li>
     <?php }?>
+  </ul>
+  <?php }?>
     <ul class="nav navbar-nav navbar-right">
     <li class="active"><?php if($_SESSION['userType'] == 1){echo "<a href='admin_page.php'>Main";} elseif($_SESSION['userType'] == 2){echo "<a href='user_page.php'>Home";}?></a></li>
     <?php if ($_SESSION["loggedin"] != true) {?>
