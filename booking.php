@@ -25,25 +25,56 @@ if(!isset($_SESSION['user_name'])){
 <div class="container" style="margin-top: 65px;" >
     <div class="col-md-7" style="float: none; margin: 0 auto;">
       <div class="form-area">
-        <form role="form" action="booking1.php" method="POST">
+        <form role="form" action="booking.php" method="POST">
         <br style="clear: both">
           <br>
 
+          <?php
+    if(isset($_POST['submit'])) {
+		$car_id = $_POST['car_id'];
+		$user_id = $_POST['user_id'];
+    $startDate = $_POST['startDate'];
+    $endDate = $_POST['endDate'];
+    $startDates =strtotime($_POST['startDate']);
+		$endDates = strtotime($_POST['endDate']);
+    $diff = ($endDates - $startDates) / (60 * 60 * 24);
+    $no_days = $diff;
+    $price = $_POST['price'];
+    $harga = (int)$price;
+		// $no_days = $diff->format("%a");
+    $total_price = $harga * $no_days;
+		$driver_id = $_POST['driver_id'];
+
+		$data = mysqli_query($conn, "INSERT INTO booking(car_id, user_id, startDate, endDate, no_days, price, total_price, driver_id) VALUES('$car_id', '$user_id', '$startDate', '$endDate', '$no_days', '$price', '$total_price', '$driver_id')");
+		$data2 = mysqli_query($conn, "UPDATE driver SET driver_availability = '0' WHERE driver_id = '$driver_id'");
+    $data3 = mysqli_query($conn, "UPDATE cars SET car_availability = '0' WHERE car_id = '$car_id'");
+    echo"<script> window.location.href='user_page.php';</script>";
+	}?>
         <?php
-        $car_id = $_GET["id"];
-        $sql1 = "SELECT * FROM cars WHERE car_id = '$car_id'";
-        $result1 = mysqli_query($conn, $sql1);
+    $car_id = $_GET['car_id'];
+    $data = mysqli_query($conn, "SELECT * FROM cars WHERE car_id='$car_id'");
 
-        if(mysqli_num_rows($result1)){
-            while($row1 = mysqli_fetch_assoc($result1)){
-                $car_name = $row1["car_name"];
-                $car_nameplate = $row1["car_nameplate"];
-                $price = $row1["price"];
-                $year = $row1["year"];
-            }
+    while ($display = mysqli_fetch_array($data)) {
+         
+     $car_id = $display['car_id'];
+		 $car_name = $display['car_name'];
+		 $car_nameplate = $display['car_nameplate'];
+		 $price = $display['price']; 
+		 $year = $display['year']; 
+		 $car_availability = $display['car_availability']; }
+
+     $sql2 = "SELECT * FROM driver WHERE driver_availability = '1' ";
+     $result2 = mysqli_query($conn, $sql2);
+     $sql3 = "SELECT * FROM driver WHERE driver_availability = '1' ";
+     $result3 = mysqli_query($conn, $sql3);
+
+        $sql4 = "SELECT * FROM user_form WHERE user_type = 'user'";
+        $result4 = mysqli_query($conn, $sql4);
+        while ($display4 = mysqli_fetch_array($result4)){
+          $user_id = $display4['id'];
         }
-
         ?>
+            
 
           <!-- <div class="form-group"> -->
               <h5> Selected Car:&nbsp;  <b><?php echo($car_name);?></b></h5>
@@ -53,12 +84,12 @@ if(!isset($_SESSION['user_name'])){
             <h5> Number Plate:&nbsp;<b> <?php echo($car_nameplate);?></b></h5>
           <!-- </div>      -->
         <!-- <div class="form-group"> -->
-        <?php $today = date("Y-m-d") ?>
+        <?php $today = date("m-d-Y") ?>
           <label><h5>Start Date:</h5></label>
-            <input type="date" name="rent_start_date" min="<?php echo($today);?>" required="">
+            <input type="date" name="startDate" min="<?php echo($today);?>" required="">
             &nbsp; 
           <label><h5>End Date:</h5></label>
-          <input type="date" name="rent_end_date" min="<?php echo($today);?>" required="">
+          <input type="date" name="endDate" min="<?php echo($today);?>" required="">
         <!-- </div>      -->
 
          <h5> Charge type:  &nbsp;
@@ -76,14 +107,10 @@ if(!isset($_SESSION['user_name'])){
                 <!-- </div>   -->
                      </div>
         </div>
-
                 <!-- <form class="form-group"> -->
                 Select a driver: &nbsp;
                 <select name="driver_id_from_dropdown" ng-model="myVar1">
                         <?php
-                        $sql2 = "SELECT * FROM driver WHERE driver_availability = '1' ";
-                        $result2 = mysqli_query($conn, $sql2);
-
                         if(mysqli_num_rows($result2) > 0){
                             while($row2 = mysqli_fetch_assoc($result2)){
                                 $driver_id = $row2["driver_id"];
@@ -91,11 +118,7 @@ if(!isset($_SESSION['user_name'])){
                                 $driver_gender = $row2["driver_gender"];
                                 $driver_phone = $row2["driver_phone"];
                     ?>
-  
-
                     <option value="<?php echo($driver_id); ?>"><?php echo($driver_name); ?>
-                   
-
                     <?php }} 
                     else{
                         ?>
@@ -106,21 +129,14 @@ if(!isset($_SESSION['user_name'])){
                 </select>
                 <!-- </form> -->
                 <div ng-switch="myVar1">
-                
-
                 <?php
-                        $sql3 = "SELECT * FROM driver WHERE driver_availability = '1' ";
-                        $result3 = mysqli_query($conn, $sql3);
-
                         if(mysqli_num_rows($result3) > 0){
                             while($row3 = mysqli_fetch_assoc($result3)){
                                 $driver_id = $row3["driver_id"];
                                 $driver_name = $row3["driver_name"];
                                 $driver_gender = $row3["driver_gender"];
                                 $driver_phone = $row3["driver_phone"];
-
                 ?>
-
                 <div ng-switch-when="<?php echo($driver_id); ?>">
                     <h5>Driver Name:&nbsp; <b><?php echo($driver_name); ?></b></h5>
                     <p>Gender:&nbsp; <b><?php echo($driver_gender); ?></b> </p>
@@ -128,7 +144,10 @@ if(!isset($_SESSION['user_name'])){
                 </div>
                 <?php }} ?>
                 </div>
-                <input type="hidden" name="car_id" value="<?php echo $car_id; ?>"><br>
+                <input type="hidden" name="car_id" value="<?php echo $car_id; ?>">
+                <input type="hidden" name="user_id" value="<?php echo $user_id; ?>">
+                <input type="hidden" name="price" value="<?php echo $price; ?>">
+                <input type="hidden" name="driver_id" value="<?php echo $driver_id; ?>"><br>
                 
            <a class="btn btn-info pull-left" href="user_page.php"> Back</a>
            <input type="submit"name="submit" value="Rent Now" class="btn btn-warning pull-right">     
@@ -139,6 +158,5 @@ if(!isset($_SESSION['user_name'])){
             <h6><strong>Note:</strong> You will be charged with extra <span class="text-danger">Rp 50.000</span> for each day after the due date ends.</h6>
         </div>
     </div>
-
 </body>
 </html>

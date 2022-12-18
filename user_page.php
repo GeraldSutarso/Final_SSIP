@@ -46,7 +46,7 @@ if(!isset($_SESSION['user_name'])){
                
                     ?>
 
-            <a href="booking.php?id=<?php echo($car_id) ?>">
+            <a href="booking.php?car_id=<?php echo $row1['car_id'] ?>">
             <div class="sub-menu">
             
             <img style='width: 250px; height:137px;' class="card-img-top" src="assets/img/cars/<?php echo $car_img; ?>" alt="Card image cap">
