@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 18, 2022 at 08:35 AM
+-- Generation Time: Dec 18, 2022 at 10:50 AM
 -- Server version: 10.4.24-MariaDB
 -- PHP Version: 8.1.6
 
@@ -32,12 +32,20 @@ CREATE TABLE `booking` (
   `user_id` int(50) NOT NULL,
   `car_id` int(50) NOT NULL,
   `driver_id` int(50) NOT NULL,
-  `startDate` date NOT NULL,
-  `endDate` date NOT NULL,
-  `price` float NOT NULL,
+  `startDate` varchar(2555) NOT NULL,
+  `endDate` varchar(2555) NOT NULL,
+  `price` int(100) NOT NULL,
   `no_days` int(50) DEFAULT NULL,
-  `total_price` float NOT NULL
+  `total_price` int(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Dumping data for table `booking`
+--
+
+INSERT INTO `booking` (`book_id`, `user_id`, `car_id`, `driver_id`, `startDate`, `endDate`, `price`, `no_days`, `total_price`) VALUES
+(6, 4, 4, 4, '2022-12-19', '2022-12-22', 0, 3, 0),
+(7, 4, 10, 3, '2022-12-18', '2022-12-24', 500000, 6, 3000000);
 
 -- --------------------------------------------------------
 
@@ -60,11 +68,11 @@ CREATE TABLE `cars` (
 --
 
 INSERT INTO `cars` (`car_id`, `car_name`, `car_nameplate`, `car_img`, `price`, `year`, `car_availability`) VALUES
-(3, 'Hyundai', 'B313A312', 'hyundai0.png', 200000, 2003, 1),
-(4, 'McQueen', '95 RUSTEZE', 'mcqueen.png', 150000, 2006, 1),
+(3, 'Hyundai', 'B313A312', 'hyundai0.png', 200000, 2003, 0),
+(4, 'McQueen', '95 RUSTEZE', 'mcqueen.png', 150000, 2006, 0),
 (7, 'Jeep', 'M1213HUH', 'jeep.jpg', 230000, 2005, 1),
 (8, 'Innova', 'J9999JJJ', 'innova.png', 999999, 2022, 1),
-(10, 'Veloz', 'G6763NUB', 'veloz.png', 500000, 2000, 1);
+(10, 'Veloz', 'G6763NUB', 'veloz.png', 500000, 2000, 0);
 
 -- --------------------------------------------------------
 
@@ -88,8 +96,8 @@ CREATE TABLE `driver` (
 
 INSERT INTO `driver` (`driver_id`, `driver_name`, `dl_number`, `driver_phone`, `driver_address`, `driver_gender`, `driver_availability`) VALUES
 (2, 'Gerald', '1231231', '+61231231', 'Jl.Beringin', 'Male', 1),
-(3, 'Dlareg', '1231232', '+61231213', 'Jln.Sukabumi', 'Female', 1),
-(4, 'Budi', '76712391', '+628777813122', 'jln.Bukitrendah', 'Male', 1);
+(3, 'Dlareg', '1231232', '+61231213', 'Jln.Sukabumi', 'Female', 0),
+(4, 'Budi', '76712391', '+628777813122', 'jln.Bukitrendah', 'Male', 0);
 
 -- --------------------------------------------------------
 
@@ -149,6 +157,12 @@ ALTER TABLE `user_form`
 --
 -- AUTO_INCREMENT for dumped tables
 --
+
+--
+-- AUTO_INCREMENT for table `booking`
+--
+ALTER TABLE `booking`
+  MODIFY `book_id` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- AUTO_INCREMENT for table `cars`
