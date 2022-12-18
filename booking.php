@@ -30,6 +30,7 @@ if(!isset($_SESSION['user_name'])){
           <br>
 
           <?php
+          include ('navbar.php');
     if(isset($_POST['submit'])) {
 		$car_id = $_POST['car_id'];
 		$user_id = $_POST['user_id'];
