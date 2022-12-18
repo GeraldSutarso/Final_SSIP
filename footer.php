@@ -8,10 +8,10 @@
           <h5 class="mb-3" style="letter-spacing: 2px; color: #ffff;">About us</h5>
           <ul class="list-unstyled mb-0">
             <li class="mb-1">
-              <a href="#!" style="color: #4f4f4f;">FAQs</a>
+              <a href="FAQ.php" style="color: #4f4f4f;">FAQs</a>
             </li>
             <li class="mb-1">
-              <a href="#!" style="color: #4f4f4f;">Contact Us</a>
+              <a href="contactus.php" style="color: #4f4f4f;">Contact Us</a>
             </li>          
           </ul>
         </div>             
