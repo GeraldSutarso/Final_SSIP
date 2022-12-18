@@ -49,10 +49,10 @@ if (isset($_GET['delete_driver'])) {
 	$driver_id = $_GET['delete_driver'];
 	mysqli_query($conn, "DELETE FROM driver WHERE driver_id=$driver_id");
 	header('location: admin_page.php');}?>
-<br>
+<br id="car_table">
 <br>
 <center>
-<h3 id="car_table"> Car Table </h3>
+<h3 > Car Table </h3>
 <div style="border:solid 1px;">
 <?php $results = mysqli_query($conn, "SELECT * FROM cars");
 ?>
@@ -88,8 +88,8 @@ if (isset($_GET['delete_driver'])) {
 	<?php }?>
 </table>
 </div>
-<br><br>
-<br><h3 id="driver_table"> Driver Table</h3>
+<br id="driver_table"><br>
+<br><h3> Driver Table</h3>
 <div style="border:solid 1px;">
 <?php $result = mysqli_query($conn, "SELECT * FROM driver");
 ?>

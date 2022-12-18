@@ -82,7 +82,7 @@ if(!isset($_SESSION['admin_name'])){
 				
 
 		$data = mysqli_query($conn, "INSERT INTO driver(driver_name, dl_number, driver_phone, driver_address, driver_gender, driver_availability) VALUES('$driver_name', '$dl_number', '$driver_phone', '$driver_address', '$driver_gender', 1)");
-		header('location:admin_page.php');
+		echo"<script> window.location.href='admin_page.php';</script>";
 	}
 	?>
 

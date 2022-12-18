@@ -84,7 +84,6 @@ if(!isset($_SESSION['admin_name'])){
   } else {
       echo "<h3>  Failed to upload image!</h3>";
   }
-		header('location:admin_page.php');
-}
+  echo"<script> window.location.href='admin_page.php';</script>";
+  }
 	?>
-    

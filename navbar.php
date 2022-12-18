@@ -3,20 +3,20 @@
   <div class="container-fluid">
     <div class="navbar-header">
     <?php if($_SESSION['userType'] == 1){?>
-      <a class="navbar-brand" href="#">Car Rental | Admin Panel</a>
+      <a class="navbar-brand" href="admin_page.php">Car Rental | Admin Panel</a>
     </div>
     <ul class="nav navbar-nav">
         <li><a href="admin_page.php"><i class="fa fa-dashboard"></i> Dashboard</a></li>
 				<li><a href="tambahmobil.php"><i class="fa-solid fa-car"></i></i></i> Add car</a></li>
 				<li><a href="tambahdriver.php"><i class="fa-solid fa-user"></i></i> Add Driver</a></li>
-				<li><a href="view.php"><i class="fa-solid fa-book"></i></i></i> View Book</a></li>
+				<li><a href="viewbook.php"><i class="fa-solid fa-book"></i></i></i> View Book</a></li>
         <?php if(stripos($_SERVER['REQUEST_URI'], 'admin_page.php')){ ?>
         <li><a href="#car_table">Car Table</a></li>
         <li><a href="#driver_table">Driver Table</a></li>
         <?php }?>
     </ul>
     <?php } else{?>
-    <a class="navbar-brand" href="#">Car Rental</a>
+    <a class="navbar-brand" href="user_page.php">Car Rental</a>
     </div>
     <ul class="nav navbar-nav">
       <li><a href="returncar.php">Return Now </a></li>
