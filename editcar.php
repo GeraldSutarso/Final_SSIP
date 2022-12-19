@@ -86,7 +86,7 @@ if(!isset($_SESSION['admin_name'])){
             <input type="text" class="form-control" id="year" name="year" placeholder="Car year" required value=<?php echo $year;?>>
           </div>
           <div class="form-group">
-            <input type="text" class="form-control" id="car_availability" name="year" placeholder="1(True)/0(False)" required value=<?php echo $car_availability;?>>
+            <input type="text" class="form-control" id="car_availability" name="car_availability" placeholder="1(True)/0(False)" required value=<?php echo $car_availability;?>>
           </div>
           <div class="form-group">
           <input type="hidden" name="car_id" value=<?php echo $_GET['car_id'];?>>

@@ -24,6 +24,7 @@ if(isset($_POST['submit'])){
       }elseif($row['user_type'] == 'user'){
          $_SESSION['userType'] = 2;
          $_SESSION['user_name'] = $row['name'];
+         $_SESSION['user_id'] = $row['id'];
          header('location:user_page.php');
 
       }

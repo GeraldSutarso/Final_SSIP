@@ -21,7 +21,7 @@
     <a class="navbar-brand" href="user_page.php">Car Rental</a>
   </div>
   <ul class="nav navbar-nav">
-  <li><a href="mybooking.php"> My Bookings </a></li>
+  <li><a href="mybooking.php?user_id=<?php $user_id= $_SESSION['user_id']; echo $user_id;?>"> My Bookings </a></li>
   <?php if(stripos($_SERVER['REQUEST_URI'], 'mybooking.php')){ ?>
           <li><a href="#list_booking">Top List</a></li>
     <?php }?>
