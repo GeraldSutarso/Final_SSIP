@@ -98,12 +98,12 @@ if(!isset($_SESSION['user_name'])){
             <div ng-switch="myVar"> 
         <div ng-switch-default>
                     <!-- <div class="form-group"> -->
-                <h5>Fare: <h5>    
+                <h5>Price: <h5>    
                 <!-- </div>    -->
                      </div>
                      <div ng-switch-when="days">
                      <!-- <div class="form-group"> -->
-                <h5>Fare: <b><?php echo("Rp. " . $price . "/day");?></b><h5>    
+                <h5>Price: <b><?php echo("Rp. " . $price . "/day");?></b><h5>    
                 <!-- </div>   -->
                      </div>
         </div>
