@@ -43,18 +43,20 @@ if(!isset($_SESSION['admin_name'])){
 include('navbar.php');
 if (isset($_GET['delete_car'])) {
 	$car_id = $_GET['delete_car'];
-	mysqli_query($conn, "DELETE FROM cars WHERE car_id=$car_id");
+	mysqli_query($conn, "UPDATE cars SET car_status = 'Inaccessible' WHERE car_id=$car_id");
+	mysqli_query($conn, "UPDATE cars SET car_availability ='0' WHERE car_id=$car_id");
 	header('location: admin_page.php');}
 if (isset($_GET['delete_driver'])) {
 	$driver_id = $_GET['delete_driver'];
-	mysqli_query($conn, "DELETE FROM driver WHERE driver_id=$driver_id");
+	mysqli_query($conn, "UPDATE driver SET driver_status = 'Inactive' WHERE driver_id=$driver_id");
+	mysqli_query($conn, "UPDATE driver SET driver_availability = '0' WHERE driver_id = $driver_id");
 	header('location: admin_page.php');}?>
 <br id="car_table">
 <br>
 <center>
 <h3 > Car Table </h3>
 <div style="border:solid 1px;">
-<?php $results = mysqli_query($conn, "SELECT * FROM cars");
+<?php $results = mysqli_query($conn, "SELECT * FROM cars WHERE car_status = 'Accessible'");
 ?>
 <table class ="table">
 	<thead class="thead-dark">
@@ -91,7 +93,7 @@ if (isset($_GET['delete_driver'])) {
 <br id="driver_table"><br>
 <br><h3> Driver Table</h3>
 <div style="border:solid 1px;">
-<?php $result = mysqli_query($conn, "SELECT * FROM driver");
+<?php $result = mysqli_query($conn, "SELECT * FROM driver WHERE driver_status = 'Active'");
 ?>
 <table class ="table">
 	<thead class="thead-dark">
