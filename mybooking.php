@@ -32,10 +32,12 @@ if(!isset($_SESSION['user_name'])){
     include('navbar.php'); 
     ?>
     <center>
-<h3 > Car Table </h3>
+<h3 > &nbsp </h3>
 <div style="border:solid 1px;">
 <?php 
 $user_id = $_GET['user_id'];
+if ($user_id != $_SESSION['user_id'])
+{header('location:mybooking.php?user_id='. $_SESSION['user_id']);}
 $results = mysqli_query($conn, "SELECT * FROM cars, booking, driver WHERE cars.car_id = booking.car_id AND booking.driver_id = driver.driver_id AND booking.user_id = '$user_id'");
 ?>
 <br id="list_booking"><br><br><br>

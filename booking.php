@@ -34,7 +34,7 @@ if(!isset($_SESSION['user_name'])){
           include ('navbar.php');
     if(isset($_POST['submit'])) {
 		$car_id = $_POST['car_id'];
-		$user_id = $_POST['user_id'];
+		$user_id = $_SESSION['user_id'];
     $startDate = $_POST['startDate'];
     $endDate = $_POST['endDate'];
     $startDates =strtotime($_POST['startDate']);
@@ -69,12 +69,6 @@ if(!isset($_SESSION['user_name'])){
      $result2 = mysqli_query($conn, $sql2);
      $sql3 = "SELECT * FROM driver WHERE driver_availability = '1' ";
      $result3 = mysqli_query($conn, $sql3);
-
-        $sql4 = "SELECT * FROM user_form WHERE user_type = 'user'";
-        $result4 = mysqli_query($conn, $sql4);
-        while ($display4 = mysqli_fetch_array($result4)){
-          $user_id = $display4['id'];
-        }
         ?>
           
           <!-- <div class="form-group"> -->
