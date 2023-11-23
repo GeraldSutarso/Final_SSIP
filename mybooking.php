@@ -38,14 +38,13 @@ if(!isset($_SESSION['user_name'])){
 $user_id = $_GET['user_id'];
 if ($user_id != $_SESSION['user_id'])
 {header('location:mybooking.php?user_id='. $_SESSION['user_id']);}
-$results = mysqli_query($conn, "SELECT * FROM cars, booking, driver WHERE cars.car_id = booking.car_id AND booking.driver_id = driver.driver_id AND booking.user_id = '$user_id'");
+$results = mysqli_query($conn, "SELECT * FROM cars, booking, driver WHERE cars.car_id = booking.car_id AND booking.driver_id = driver.driver_id AND booking.user_id = '$user_id' AND cars.car_status = 'Accessible' AND driver.driver_status = 'Active'");
 ?>
 <br id="list_booking"><br><br><br>
 <h3>Your Booking List</h3>
 <table class ="table">
 	<thead class="thead-dark">
 	<tr>
-    <th>Car Id</th>
 		<th>Car Name</th>
 		<th>Car Nameplate</th>
 		<th>Start Date</th>
@@ -60,7 +59,6 @@ $results = mysqli_query($conn, "SELECT * FROM cars, booking, driver WHERE cars.c
   <tbody class="tbody-light">
 	<?php while ($display = mysqli_fetch_array($results)) {?>
 	<tr>
-		<td><?php echo $display['car_id']; ?></td>
 		<td><?php echo $display['car_name']; ?></td>
 		<td><?php echo $display['car_nameplate']; ?></td>
     <td><?php echo $display["startDate"] ?></td>
